@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Swap waitlist" />
+  <link rel="icon" type="image/png" href="images/favIconSwap.png" />
+
+  <!-- Poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f4f4f4;
+    --bg-deep: #d4d4d4;
+    --panel: rgba(255, 255, 255, 0.8);
+    --accent: #111111;
+    --accent-soft: #666666;
+    --text: #1a1a1a;
+    --line: rgba(17, 17, 17, 0.12);
+    --shadow: rgba(17, 17, 17, 0.12);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background-color: #f4f4f4;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(17, 17, 17, 0.11) 0, transparent 32%),
+      radial-gradient(circle at bottom right, rgba(102, 102, 102, 0.12) 0, transparent 28%),
+      linear-gradient(135deg, #ffffff 0%, var(--bg) 45%, var(--bg-deep) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(244, 244, 244, 0.84);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar-inner {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .topbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .topbar-brand img {
+    width: 44px;
+    height: 44px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .topbar-name {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .topbar-link,
+  .topbar-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+  }
+
+  .topbar-link {
+    color: var(--accent-soft);
+  }
+
+  .topbar-link:hover,
+  .topbar-link:focus-visible {
+    background: rgba(17, 17, 17, 0.06);
+    color: var(--accent);
+  }
+
+  .topbar-button {
+    background: var(--accent);
+    color: #f7f7f7;
+    box-shadow: 0 10px 24px rgba(17, 17, 17, 0.16);
+  }
+
+  .topbar-button:hover,
+  .topbar-button:focus-visible {
+    transform: translateY(-1px);
+    background: #2b2b2b;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 32px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 1120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .left {
+    max-width: 520px;
+  }
+
+  .logo-word {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-word img {
+    width: clamp(88px, 10vw, 92px);
+    height: clamp(88px, 10vw, 92px);
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .headline {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .subcopy br {
+      display: none;
+    }
+  }
+
+  .subcopy {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--accent-soft);
+    max-width: 420px;
+    margin-bottom: 24px;
+  }
+
+  .form-wrapper {
+    max-width: 460px;
+  }
+
+  .form-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .form-shell input[type="email"],
+  .form-shell input[type="text"] {
+    width: 100%;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--text);
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  .form-shell input::placeholder {
+    color: rgba(102, 102, 102, 0.6);
+  }
+
+  .form-shell button {
+    border: none;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--accent);
+    color: #f7f7f7;
+    border-radius: 8px;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    width: 100%;
+  }
+
+  .form-shell button:hover {
+    filter: brightness(1.05);
+  }
+
+  .form-shell button:active {
+    transform: translateY(1px) scale(0.99);
+    filter: brightness(0.96);
+  }
+
+  .form-note {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--accent-soft);
+    opacity: 0.8;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone-frame {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .phone-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .topbar-inner {
+      width: min(100% - 24px, 720px);
+      min-height: 70px;
+    }
+
+    .content {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .left {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .subcopy {
+      text-align: center;
+    }
+
+    .form-wrapper {
+      width: 100%;
+    }
+
+    .right {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .phone-frame {
+      max-width: 360px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .topbar-inner {
+      gap: 12px;
+    }
+
+    .topbar-name {
+      font-size: 16px;
+    }
+
+    .topbar-actions {
+      gap: 8px;
+    }
+
+    .topbar-link,
+    .topbar-button {
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: 13px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="#">
+        <img src="images/favIconSwap.png" alt="Swap icon" />
+        <span class="topbar-name">Swap</span>
+      </a>
+
+      <div class="topbar-actions">
+        <a class="topbar-link" href="mailto:hej@rpsstudio.se">Support</a>
+        <!-- <a class="topbar-button" href="#">Download</a> -->
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <div class="content">
+      <!-- LEFT SIDE -->
+      <div class="left">
+        <div class="logo-word">
+          <img src="images/favIconSwap.png" alt="Swap logo" />
+        </div>
+        <h2 class="headline">Want better work-life balance? </h2>
+        <p class="subcopy">
+          Want a day off, but having a hard time finding someone to swap with? Swap is the solution.<br>
+          Join the waitlist!
+        </p>
+
+        <div class="form-wrapper">
+
+          <!-- Hidden iframe to prevent Google redirect -->
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<form class="form-shell"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSezPRHZKwQPZwN74G7hkuwp08kGXntqIaHH370LQXWBQ8bS_g/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="alert('Thanks! You have joined the waitlist.'); setTimeout(() => this.reset(), 100);">
+
+  <!-- REQUIRED GOOGLE HIDDEN FIELDS -->
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="partialResponse" value="[null,null,&quot;1098064527202758570&quot;]">
+  <input type="hidden" name="pageHistory" value="0">
+  <input type="hidden" name="fbzx" value="1098064527202758570">
+
+  
+  <!-- FULL NAME -->
+  <input
+    type="text"
+    name="entry.972524870"
+    placeholder="Full Name"
+    required
+  />
+
+  <!-- EMAIL -->
+  <input
+    type="email"
+    name="entry.296163115"
+    placeholder="Email"
+    required
+    autocomplete="email"
+  />
+
+
+  <button type="submit">Join Waitlist</button>
+</form>
+
+          <p class="form-note">
+            
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE IMAGE -->
+      <div class="right">
+        <div class="phone-frame">
+          <img src="images/screenLog.png" alt="Swap app preview" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
