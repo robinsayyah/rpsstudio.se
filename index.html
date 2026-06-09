@@ -66,7 +66,6 @@
       align-items: center;
       margin-top: 30px;
       justify-content: center;
-      gap: 14px;
       margin-bottom: 0;
       padding-bottom: 18px;
       position: relative;
@@ -83,25 +82,14 @@
       transform: translateX(-50%);
     }
 
-    .rps-logo-mark {
+    .rps-logo img {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 85px;
+      width: auto;
       height: 58px;
-      border-radius: 18px;
-      color: #000000;
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .rps-logo-text {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text);
+      max-width: min(260px, 70vw);
+      object-fit: contain;
     }
 
     .tagline {
@@ -136,10 +124,11 @@
     }
 
     .apps {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
       justify-content: center;
-      align-items: flex-start;
-      gap: 80px;
+      align-items: start;
+      gap: 80px 72px;
       margin: 0 auto;
     }
 
@@ -185,13 +174,11 @@
       }
 
       .rps-logo {
-        gap: 10px;
+        height: 52px;
       }
 
-      .rps-logo-mark {
-        width: 64px;
+      .rps-logo img {
         height: 52px;
-        font-size: 24px;
       }
 
       .tagline {
@@ -209,20 +196,24 @@
   <main class="page">
     <section class="hero" aria-label="RPS Studio">
       <div class="rps-logo" aria-label="RPS Studio logo">
-        <div class="rps-logo-mark">RPS</div>
-        <div class="rps-logo-text">Studio</div>
+        <img src="./images/rpsLogo.png" alt="RPS Studio logo">
       </div>
 
       <p class="tagline">
         Digital solutions with focus on clarity, performance and user experience.
       </p>
 
-      <a class="cta" href="mailto:developer@robinsayyah.se">Get in touch</a>
+      <a class="cta" href="mailto:hej@rpsstudio.se">Get in touch</a>
 
       <div class="apps" aria-label="Featured apps">
         <a class="app" href="https://www.maggio.club" target="_blank" rel="noopener noreferrer">
           <img src="./images/maggio.png" alt="Maggio app icon">
           <div class="app-name">Maggio</div>
+        </a>
+
+        <a class="app" href="./swap/" target="_blank" rel="noopener noreferrer" aria-label="Swap app">
+          <img src="./images/swap.png" alt="Swap app icon">
+          <div class="app-name">Swap</div>
         </a>
 
         <a class="app" href="https://www.tidlogbook.com" target="_blank" rel="noopener noreferrer">
