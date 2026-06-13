@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swap - Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for Swap by RPS Studio AB" />
+  <link rel="icon" type="image/png" href="images/favIconSwap.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f4f4f4;
+    --bg-deep: #d4d4d4;
+    --panel: rgba(255, 255, 255, 0.8);
+    --accent: #111111;
+    --accent-soft: #666666;
+    --text: #1a1a1a;
+    --line: rgba(17, 17, 17, 0.12);
+    --shadow: rgba(17, 17, 17, 0.12);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background-color: var(--bg);
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(17, 17, 17, 0.11) 0, transparent 32%),
+      radial-gradient(circle at bottom right, rgba(102, 102, 102, 0.12) 0, transparent 28%),
+      linear-gradient(135deg, #ffffff 0%, var(--bg) 45%, var(--bg-deep) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(244, 244, 244, 0.84);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar-inner {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .topbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .topbar-brand img {
+    width: 44px;
+    height: 44px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .topbar-name {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .topbar-link,
+  .topbar-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+  }
+
+  .topbar-link {
+    color: var(--accent-soft);
+  }
+
+  .topbar-link:hover,
+  .topbar-link:focus-visible {
+    background: rgba(17, 17, 17, 0.06);
+    color: var(--accent);
+  }
+
+  .topbar-button {
+    background: var(--accent);
+    color: #f7f7f7;
+    box-shadow: 0 10px 24px rgba(17, 17, 17, 0.16);
+  }
+
+  .topbar-button:hover,
+  .topbar-button:focus-visible {
+    transform: translateY(-1px);
+    background: #2b2b2b;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 44px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.06);
+    color: var(--accent);
+    border: 1px solid var(--line);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin: 2px 0 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    color: var(--accent-soft);
+    font-size: 0.95rem;
+    max-width: 680px;
+    line-height: 1.6;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--accent-soft);
+  }
+
+  .pill {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    backdrop-filter: blur(8px);
+  }
+
+  .card {
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 22px 22px 18px;
+    box-shadow: 0 18px 40px var(--shadow);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(16px);
+    margin-bottom: 20px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .section-index {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.06);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--accent-soft);
+    flex: 0 0 auto;
+  }
+
+  .card h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .card p,
+  .card li {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--accent-soft);
+  }
+
+  .card p + p,
+  .card ul + p,
+  .card p + ul {
+    margin-top: 10px;
+  }
+
+  .card ul {
+    margin: 8px 0 0 18px;
+    padding: 0;
+  }
+
+  .card ul li + li {
+    margin-top: 6px;
+  }
+
+  .email-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .footer {
+    margin-top: 28px;
+    font-size: 0.75rem;
+    color: var(--accent-soft);
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 640px) {
+    .topbar-inner {
+      width: min(100% - 24px, 720px);
+      min-height: 70px;
+      gap: 12px;
+    }
+
+    .topbar-name {
+      font-size: 16px;
+    }
+
+    .topbar-actions {
+      gap: 8px;
+    }
+
+    .topbar-link,
+    .topbar-button {
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: 13px;
+    }
+
+    .page {
+      padding: 28px 14px 36px;
+    }
+
+    .card {
+      padding: 18px 16px 14px;
+      border-radius: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="index.html">
+        <img src="images/favIconSwap.png" alt="Swap icon" />
+        <span class="topbar-name">Swap</span>
+      </a>
+
+      <div class="topbar-actions">
+        <a class="topbar-link" href="mailto:hej@rpsstudio.se">Support</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <header class="header">
+      <div class="badge"><span class="badge-dot"></span>Privacy</div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">
+        Swap is a privacy-focused app for airline crew members to list, request, and find duty swaps.
+        This policy explains what information is processed and when it is shared.
+      </p>
+      <div class="meta-row">
+        <div class="pill">Last update: <strong>09 June 2026</strong></div>
+        <div class="pill">Controller: <strong>RPS Studio AB</strong></div>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">0</div><h2>Can't bother reading?</h2></div>
+      <p>There is no data collection other than what is needed to make the app usable. We do not store or share any information with third parties, such as your airline. No other users can see your information unless you share it.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">1</div><h2>About this Privacy Policy</h2></div>
+      <p>Swap is an app that allows airline crew members to list, request, and find duty swaps.</p>
+      <p>This Privacy Policy explains how RPS Studio AB ("we", "us", or "our") processes personal data when you use the Swap mobile application ("Swap" or the "App").</p>
+      <p>Swap is an independent service. It is not operated by, affiliated with, endorsed by, or connected to your airline. We do not provide your imported roster, personal information, or swap activity to your airline.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">2</div><h2>Data Controller</h2></div>
+      <p>RPS Studio AB</p>
+      <p>Privacy enquiries: <a class="email-link" href="mailto:hej@rpsstudio.se">hej@rpsstudio.se</a></p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">3</div><h2>Personal Data Processed by Swap</h2></div>
+      <p>Depending on how you use Swap, the App may process the following information:</p>
+      <ul>
+        <li>Profile and contact information, such as your name, email address, telephone number, airline or operator, crew category, base, qualification, and other information you choose to add.</li>
+        <li>Roster and calendar information, such as duty dates, duty times, flight numbers, airports, destinations, sectors, duty types, standby periods, days off, and other roster-related details you choose to import or enter.</li>
+        <li>Marketplace information, such as listings, swap requests, offers, responses, and contact-sharing status.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">4</div><h2>Your Private Roster</h2></div>
+      <p>Your complete imported roster is private.</p>
+      <p>Your private roster is stored using Apple CloudKit in your private iCloud database. This means it is associated with your iCloud account and synchronised securely through Apple's cloud infrastructure.</p>
+      <p>Your private roster is not publicly visible to other Swap users. It is not provided to your airline. It is not visible to us through the CloudKit developer portal.</p>
+      <p>Importing a roster does not automatically publish your duties. A duty becomes visible in the marketplace only when you actively choose to create a listing.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">5</div><h2>Marketplace Listings</h2></div>
+      <p>When you actively publish a listing, Swap makes a limited amount of information available to other Swap users so that they can understand and respond to the listing.</p>
+      <p>A listing may include information such as:</p>
+      <ul>
+        <li>Duty date and time</li>
+        <li>Duty type</li>
+        <li>Flight number</li>
+        <li>Airports, destinations, or sectors</li>
+        <li>Whether you want to exchange or give away the duty</li>
+        <li>Other limited information required to describe the listing</li>
+      </ul>
+      <p>Your complete roster is never published.</p>
+      <p>Your name, email address, and telephone number are not displayed publicly in the marketplace.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">6</div><h2>Contact Details After Contact</h2></div>
+      <p>Your contact details are disclosed only to the other participating user when:</p>
+      <ul>
+        <li>You tap Contact on another user's offer;</li>
+        <li>Another user taps Contact on your offer; or</li>
+        <li>Both users otherwise choose to share contact details through the App.</li>
+      </ul>
+      <p>This allows the participating users to contact each other and complete any required steps outside Swap, such as using an airline's official systems and procedures.</p>
+      <p>Your contact details are not disclosed to users who are merely browsing listings.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">7</div><h2>How CloudKit Is Used</h2></div>
+      <p>Swap uses Apple CloudKit, an Apple-operated cloud-storage service built on iCloud infrastructure.</p>
+      <p>In practical terms, CloudKit allows the App to store and synchronise information securely using Apple's cloud servers.</p>
+      <p>Swap separates information according to its purpose:</p>
+      <ul>
+        <li>Your complete roster and private profile data are stored privately and are associated with your iCloud account.</li>
+        <li>Marketplace listings contain only the limited information required for other users to understand and respond to a listing.</li>
+        <li>Contact information is disclosed only after a user chooses to contact the other participating crew member.</li>
+      </ul>
+      <p>Apple processes data as the provider of the underlying cloud infrastructure. Apple's processing is also governed by Apple's applicable privacy information and iCloud terms.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">8</div><h2>How We Use Personal Data</h2></div>
+      <p>Personal data is processed only where necessary to:</p>
+      <ul>
+        <li>Create and maintain your Swap profile</li>
+        <li>Import, display, and manage your roster within the App</li>
+        <li>Allow you to publish duty-swap listings</li>
+        <li>Display relevant listings to other Swap users</li>
+        <li>Allow users to make, receive, and respond to offers</li>
+        <li>Allow participating users to contact each other after choosing Contact</li>
+        <li>Provide support and respond to questions</li>
+        <li>Maintain the security and reliability of the App</li>
+        <li>Comply with applicable legal requirements</li>
+        <li>Establish, exercise, or defend legal claims where necessary</li>
+      </ul>
+      <p>We do not sell your personal data.</p>
+      <p>We do not use your personal data for advertising.</p>
+      <p>We do not use your personal data for cross-app tracking.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">9</div><h2>Legal Basis for Processing</h2></div>
+      <p>Where the General Data Protection Regulation ("GDPR") or equivalent data-protection rules apply, we rely on the following legal bases:</p>
+      <ul>
+        <li>Performance of a contract: We process information required to provide the functions you request, including profile management, roster import, marketplace listings, offers, and contact-sharing records.</li>
+        <li>Consent: Where required, we ask for your permission before accessing information such as calendar data. You can withdraw device permissions at any time through your device settings.</li>
+        <li>Legitimate interests: Where applicable, we may process limited information required to operate, secure, and troubleshoot Swap, provided that these interests do not override your rights and freedoms.</li>
+        <li>Legal obligations and legal claims: We may process information where required by applicable law or where necessary to establish, exercise, or defend legal claims.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">10</div><h2>Calendar Access</h2></div>
+      <p>Swap requests access to your calendar only when required for a function you choose to use and only after you grant permission on your device.</p>
+      <p>Calendar access is used only to import, display, and manage roster-related information within Swap.</p>
+      <p>You can withdraw calendar access at any time in your device settings. Withdrawing permission prevents Swap from reading additional calendar information. It does not automatically remove information that you previously imported into the App.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">11</div><h2>When Data Is Shared</h2></div>
+      <p>We do not provide your personal data, private roster, or swap activity to your airline.</p>
+      <p>We do not sell your personal data to advertisers, data brokers, or other businesses.</p>
+      <p>Information is disclosed only in the following limited circumstances:</p>
+      <ul>
+        <li>Other Swap users may see the limited duty information contained in a listing you actively publish.</li>
+        <li>The other participating user receives your relevant contact details after one of you chooses Contact.</li>
+        <li>Apple processes information through CloudKit as the provider of the underlying cloud infrastructure.</li>
+        <li>Information may be disclosed where required by applicable law, a binding legal process, or a valid request from a competent authority.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">12</div><h2>Official Airline Procedures</h2></div>
+      <p>Swap is a marketplace for finding and agreeing potential duty swaps between users.</p>
+      <p>Swap does not replace your airline's official systems, approvals, procedures, contractual requirements, or applicable flight-time limitations.</p>
+      <p>An agreement reached through Swap does not mean that your airline has approved the swap.</p>
+      <p>You remain responsible for completing any required airline procedure and ensuring that a proposed swap is permitted.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">13</div><h2>Data Retention</h2></div>
+      <p>Personal data is retained only for as long as necessary to provide Swap and fulfil the purposes described in this Privacy Policy.</p>
+      <p>In general:</p>
+      <ul>
+        <li>Your profile and private roster information are retained while your account remains active.</li>
+        <li>Active listings are retained while they remain available in the marketplace.</li>
+        <li>Withdrawn, rejected, expired, or completed listings are deleted or retained only for the limited period required to provide relevant history features, resolve disputes, or comply with applicable law.</li>
+        <li>Contact details shared with another user may remain visible to that participating user as part of the contact-sharing record.</li>
+      </ul>
+      <p>When you delete your account, personal data associated with the account is deleted or anonymised unless retention is required by law or strictly necessary to resolve an active dispute.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">14</div><h2>Account Deletion and Permissions</h2></div>
+      <p>You can request deletion of your Swap account and associated personal data in the App:</p>
+      <p><strong>Settings &gt; Account &gt; Delete Account</strong></p>
+      <p>You can also contact us at <a class="email-link" href="mailto:hej@rpsstudio.se">hej@rpsstudio.se</a>.</p>
+      <p>You can withdraw calendar access at any time through your device settings.</p>
+      <p>To remove previously imported roster information without deleting your account, use the relevant deletion option in the App.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">15</div><h2>Your Data-Protection Rights</h2></div>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul>
+        <li>Request access to your personal data</li>
+        <li>Request correction of inaccurate or incomplete information</li>
+        <li>Request deletion of your personal data</li>
+        <li>Request restriction of processing</li>
+        <li>Receive certain personal data in a portable format</li>
+        <li>Object to certain processing</li>
+        <li>Withdraw consent where processing is based on consent</li>
+        <li>Lodge a complaint with a competent data-protection authority</li>
+      </ul>
+      <p>To exercise your rights, contact us at <a class="email-link" href="mailto:hej@rpsstudio.se">hej@rpsstudio.se</a>.</p>
+      <p>If you are located in Sweden, you may also contact the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY).</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">16</div><h2>Security</h2></div>
+      <p>We take appropriate technical and organisational measures designed to protect personal data against unauthorised access, loss, alteration, or disclosure.</p>
+      <p>Private roster information is stored using your private CloudKit database. Marketplace listings contain only the limited information required for the marketplace to function.</p>
+      <p>However, no system can guarantee absolute security. You should protect access to your device and Apple account and avoid publishing information that is not required for a proposed duty swap.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">17</div><h2>Children</h2></div>
+      <p>Swap is intended for airline crew members and is not intended for children.</p>
+      <p>We do not knowingly collect personal data from children. If you believe that a child has provided personal data through Swap, contact us at <a class="email-link" href="mailto:hej@rpsstudio.se">hej@rpsstudio.se</a>.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">18</div><h2>Analytics, Advertising, and Tracking</h2></div>
+      <p>Swap does not use third-party advertising services.</p>
+      <p>Swap does not use personal data for targeted advertising or cross-app tracking.</p>
+      <p>Swap does not currently use third-party analytics or crash-reporting services.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">19</div><h2>International Data Transfers</h2></div>
+      <p>Apple may process data using infrastructure located in different countries.</p>
+      <p>Where personal data is transferred outside the European Economic Area, the transfer must be handled using an applicable lawful transfer mechanism and appropriate safeguards.</p>
+      <p>For more information about Apple's processing practices, refer to Apple's applicable privacy information and iCloud terms.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">20</div><h2>Changes to This Privacy Policy</h2></div>
+      <p>We may update this Privacy Policy when Swap changes or where required by law.</p>
+      <p>If an update materially affects how personal data is processed, we will provide an appropriate notice in the App or through another suitable channel.</p>
+      <p>The date at the top of this Privacy Policy shows when it was last updated.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-header"><div class="section-index">21</div><h2>Contact Us</h2></div>
+      <p>For questions, requests, or complaints relating to privacy, contact:</p>
+      <p>RPS Studio AB<br><a class="email-link" href="mailto:hej@rpsstudio.se">hej@rpsstudio.se</a></p>
+    </section>
+
+    <footer class="footer">
+      &copy; 2026 RPS Studio AB. Swap is an independent service and is not affiliated with or endorsed by any airline.
+    </footer>
+  </main>
+</body>
+</html>
